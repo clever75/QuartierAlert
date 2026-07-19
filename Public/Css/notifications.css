@@ -1,0 +1,261 @@
+/* notifications.css — MonQuartier TG — CSS simple */
+
+.conteneur {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ── PAGE ─────────────────────────────────────── */
+.page-notifs {
+    background-color: #F8F9FA;
+    min-height: 80vh;
+    padding: 36px 0 60px 0;
+}
+
+/* ── EN-TÊTE ──────────────────────────────────── */
+.page-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.page-entete h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0d1f17;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-entete h1 i {
+    color: #006A4E;
+}
+
+.page-entete p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Bouton tout marquer lu */
+.btn-tout-lire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background-color: #ffffff;
+    color: #006A4E;
+    border: 1.5px solid #006A4E;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-tout-lire:hover {
+    background-color: #e8f5f0;
+}
+
+/* ── LISTE VIDE ───────────────────────────────── */
+.notifs-vide {
+    text-align: center;
+    padding: 80px 24px;
+    color: #6b7280;
+}
+
+.notifs-vide i {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 16px;
+    color: #d1d5db;
+}
+
+.notifs-vide h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.notifs-vide p {
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.btn-retour-sig {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #006A4E;
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-retour-sig:hover {
+    background-color: #1B4332;
+}
+
+/* ── LISTE NOTIFICATIONS ──────────────────────── */
+.liste-notifs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* ── ITEM ─────────────────────────────────────── */
+.notif-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    position: relative;
+    transition: background-color 0.15s;
+}
+
+.notif-item:last-child {
+    border-bottom: none;
+}
+
+.notif-item:hover {
+    background-color: #fafafa;
+}
+
+/* Non lue = fond légèrement coloré */
+.notif-item.non-lue {
+    background-color: #f0fdf4;
+}
+
+.notif-item.non-lue:hover {
+    background-color: #dcfce7;
+}
+
+/* ── ICÔNE TYPE ───────────────────────────────── */
+.notif-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.icone-bleu   { background-color: #eff6ff; color: #2563eb; }
+.icone-orange { background-color: #fff7ed; color: #ea580c; }
+.icone-vert   { background-color: #f0fdf4; color: #16a34a; }
+.icone-rouge  { background-color: #fef2f2; color: #dc2626; }
+.icone-gris   { background-color: #F8F9FA; color: #6b7280; }
+
+/* ── CONTENU ──────────────────────────────────── */
+.notif-contenu {
+    flex: 1;
+    min-width: 0;
+}
+
+.notif-message {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.notif-item.non-lue .notif-message {
+    font-weight: 700;
+}
+
+.notif-sig {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-sig i {
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+.notif-temps {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ── LIEN VERS SIGNALEMENT ────────────────────── */
+.notif-lien {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: #F8F9FA;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.notif-lien:hover {
+    background-color: #e8f5f0;
+    border-color: #006A4E;
+    color: #006A4E;
+}
+
+/* ── POINT NON LU ─────────────────────────────── */
+.notif-point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #006A4E;
+    flex-shrink: 0;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 480px) {
+    .notif-item {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+    .notif-icone {
+        width: 34px;
+        height: 34px;
+        font-size: 0.8rem;
+    }
+    .page-entete {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

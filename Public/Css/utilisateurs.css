@@ -1,0 +1,218 @@
+/* ============================================================
+   utilisateurs.css — Mia Dzra Do
+   Page de gestion des utilisateurs
+   ============================================================ */
+
+/* ── Onglets filtres ───────────────────────────────────────── */
+.u-tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--gris-200);
+}
+
+.u-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gris-600);
+    border: 1px solid var(--gris-200);
+    background: #fff;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.u-tab:hover { border-color: var(--vert-clair); color: var(--vert-clair); }
+
+.u-tab.active {
+    background: var(--vert-pale);
+    color: var(--vert-clair);
+    border-color: #A8D5BB;
+}
+
+.u-tab-count {
+    font-size: 0.68rem;
+    font-weight: 700;
+    background: var(--vert-clair);
+    color: #fff;
+    padding: 1px 6px;
+    border-radius: 10px;
+}
+
+/* ── Lignes inactives ──────────────────────────────────────── */
+.row-inactif td { opacity: 0.55; }
+
+/* ── Cellule utilisateur ───────────────────────────────────── */
+.u-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.u-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--vert-pale);
+    color: var(--vert-clair);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #A8D5BB;
+}
+
+.u-nom   { font-weight: 600; font-size: 0.85rem; color: var(--gris-900); }
+.u-date  { font-size: 0.7rem; color: var(--gris-400); margin-top: 2px; display: flex; align-items: center; gap: 4px; }
+.u-tel   { font-size: 0.82rem; color: var(--gris-900); }
+.u-email { font-size: 0.7rem; color: var(--gris-400); margin-top: 2px; }
+.u-nil   { color: var(--gris-400); font-size: 0.82rem; }
+.u-commune { font-size: 0.82rem; color: var(--gris-600); }
+.u-vous  { font-size: 0.72rem; color: var(--gris-400); font-style: italic; }
+
+/* ── Badge rôle ────────────────────────────────────────────── */
+.u-role-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.role-citoyen     { background: var(--gris-100);  color: var(--gris-600);  border: 1px solid var(--gris-200); }
+.role-agent       { background: #EFF6FF;           color: #2563EB;          border: 1px solid #BFDBFE; }
+.role-super_admin { background: var(--vert-pale);  color: var(--vert-clair); border: 1px solid #A8D5BB; }
+
+/* ── Badge service ─────────────────────────────────────────── */
+.u-service {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #2563EB;
+    background: #EFF6FF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #BFDBFE;
+}
+
+/* ── Badge actif ───────────────────────────────────────────── */
+.u-actif {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.u-actif::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+.actif-oui { background: var(--vert-pale);  color: var(--vert-clair); }
+.actif-oui::before { background: var(--vert-clair); }
+.actif-non { background: var(--rouge-pale); color: var(--rouge); }
+.actif-non::before { background: var(--rouge); }
+
+/* ── Bouton réactiver ──────────────────────────────────────── */
+.btn-reac {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    background: var(--vert-pale);
+    color: var(--vert-clair);
+    border: 1px solid #A8D5BB;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: 'DM Sans', sans-serif;
+}
+.btn-reac:hover { background: #c5e8d0; }
+
+/* ── TABLE : masquée sur mobile ────────────────────────────── */
+.u-table  { display: table; }
+.u-cards  { display: none; }
+
+/* ── CARDS MOBILE ──────────────────────────────────────────── */
+.u-card {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gris-200);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    transition: background 0.12s;
+}
+.u-card:last-child { border-bottom: none; }
+.u-card:hover { background: #FAFBFC; }
+.u-card-inactif { opacity: 0.55; }
+
+.u-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.u-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.u-commune-tag {
+    font-size: 0.72rem;
+    color: var(--gris-600);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.u-commune-tag i { color: var(--vert-clair); font-size: 0.65rem; }
+
+.u-card-vide {
+    padding: 48px 20px;
+    text-align: center;
+    color: var(--gris-400);
+    font-size: 0.9rem;
+}
+.u-card-vide i { display: block; font-size: 2rem; margin-bottom: 10px; opacity: 0.4; }
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .u-table { display: none; }
+    .u-cards  { display: block; }
+
+    .u-tabs {
+        padding: 10px 14px;
+        gap: 4px;
+    }
+
+    .u-tab {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .u-tab i { display: none; }
+}

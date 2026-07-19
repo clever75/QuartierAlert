@@ -1,0 +1,145 @@
+body {
+    overflow-x: hidden;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FDF6EC;
+    color: #2C1A0E;
+}
+
+.carte-wrap {
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* TOP */
+.carte-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.carte-titre h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin-bottom: 0.2rem;
+}
+
+.carte-titre span {
+    font-size: 0.875rem;
+    color: #8B6A3E;
+}
+
+/* LÉGENDE */
+.legende {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.legende-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: #5C3D1E;
+    font-weight: 500;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot--nouveau  { background: #BF360C; }
+.dot--en_cours { background: #E65100; }
+.dot--resolu   { background: #1B5E20; }
+
+/* CARTE LEAFLET */
+#carte {
+    width: 100%;
+    height: 600px;
+    border-radius: 16px;
+    border: 1.5px solid #E8D5B0;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(44,26,14,0.08);
+}
+
+/* MARQUEURS */
+.marqueur {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    border: 2px solid white;
+}
+
+.marqueur > * { transform: rotate(45deg); }
+
+.marqueur--nouveau  { background: #BF360C; }
+.marqueur--en_cours { background: #E65100; }
+.marqueur--resolu   { background: #1B5E20; }
+
+/* POPUP */
+.popup {
+    font-family: 'DM Sans', sans-serif;
+    min-width: 200px;
+}
+
+.popup-statut {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+}
+
+.popup-statut--nouveau  { background: #FBE9E7; color: #BF360C; }
+.popup-statut--en_cours { background: #FFF3E0; color: #E65100; }
+.popup-statut--resolu   { background: #E8F5E9; color: #1B5E20; }
+
+.popup-titre {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2C1A0E;
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+}
+
+.popup-meta {
+    font-size: 0.78rem;
+    color: #8B6A3E;
+    margin-bottom: 0.75rem;
+}
+
+.popup-lien {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #1B5E20;
+    text-decoration: none;
+}
+.popup-lien:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+    .carte-wrap { padding: 0 1rem; }
+    #carte { height: 450px; }
+    .carte-top { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,364 @@
+/* ============================================================
+   login.css — Mia Dzra Do
+   Design : split-screen, panneau gauche vert foncé + droite blanc
+   Police : Playfair Display (titres) + DM Sans (corps)
+   ============================================================ */
+
+/* ── RESET LOCAL ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── VARIABLES ───────────────────────────────────────── */
+:root {
+    --vert-fonce:   #1B4332;
+    --vert-moyen:   #2D6A4F;
+    --vert-clair:   #52B788;
+    --or:           #FF9F1C;
+    --blanc:        #FFFFFF;
+    --gris-clair:   #F4F6F4;
+    --gris-bord:    #D8E0DA;
+    --texte:        #1A2E22;
+    --texte-doux:   #5A7364;
+    --rouge:        #C0392B;
+    --rouge-fond:   #FDF2F1;
+    --rayon:        10px;
+}
+
+/* ── LAYOUT SPLIT-SCREEN ─────────────────────────────── */
+.auth-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ── PANNEAU GAUCHE : visuel ─────────────────────────── */
+.auth-visuel {
+    flex: 0 0 42%;
+    background-color: var(--vert-fonce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Motif géométrique en fond */
+.auth-visuel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(82, 183, 136, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 159, 28, 0.08) 0%, transparent 50%);
+}
+
+.auth-visuel-contenu {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: var(--blanc);
+}
+
+.auth-logo-grand {
+    font-size: 3rem;
+    color: var(--or);
+    line-height: 1;
+}
+
+.auth-slogan {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--blanc);
+}
+
+.auth-pays {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.04em;
+}
+
+/* Chiffres en bas du panneau gauche */
+.auth-chiffres {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.auth-chiffre {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.chiffre-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--or);
+}
+
+.chiffre-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+/* ── PANNEAU DROIT : formulaire ──────────────────────── */
+.auth-formulaire {
+    flex: 1;
+    background-color: var(--gris-clair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 32px;
+}
+
+.auth-carte {
+    background-color: var(--blanc);
+    border-radius: 16px;
+    border: 1px solid var(--gris-bord);
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ── RETOUR ──────────────────────────────────────────── */
+.auth-retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--texte-doux);
+    text-decoration: none;
+    transition: color 0.2s;
+    margin-bottom: 4px;
+}
+
+.auth-retour:hover { color: var(--vert-fonce); }
+
+/* ── TITRES ──────────────────────────────────────────── */
+.auth-titre {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--texte);
+    line-height: 1.2;
+}
+
+.auth-sous-titre {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--texte-doux);
+    margin-top: -8px;
+}
+
+.auth-sous-titre a {
+    color: var(--vert-moyen);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-sous-titre a:hover { text-decoration: underline; }
+
+/* ── ALERTE ERREUR ───────────────────────────────────── */
+.auth-alerte {
+    background-color: var(--rouge-fond);
+    border: 1px solid #F1A9A3;
+    border-radius: var(--rayon);
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: var(--rouge);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.auth-alerte i { margin-top: 2px; flex-shrink: 0; }
+
+/* ── CHAMPS ──────────────────────────────────────────── */
+.champ-groupe {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.champ-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--texte);
+    letter-spacing: 0.01em;
+}
+
+.champ-icone {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.champ-icone > i:first-child {
+    position: absolute;
+    left: 14px;
+    color: var(--texte-doux);
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+.champ-icone input {
+    width: 100%;
+    padding: 12px 14px 12px 38px;
+    border: 1.5px solid var(--gris-bord);
+    border-radius: var(--rayon);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.925rem;
+    color: var(--texte);
+    background-color: var(--blanc);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.champ-icone input:focus {
+    border-color: var(--vert-clair);
+    box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.15);
+}
+
+/* Bouton afficher/masquer mot de passe */
+.champ-mdp input { padding-right: 44px; }
+
+.toggle-mdp {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--texte-doux);
+    font-size: 0.9rem;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.toggle-mdp:hover { color: var(--vert-fonce); }
+
+/* Texte d'aide sous le champ */
+.champ-aide {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--texte-doux);
+}
+
+/* ── CHAMP OTP ───────────────────────────────────────── */
+.input-otp {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid var(--gris-bord);
+    border-radius: var(--rayon);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--texte);
+    text-align: center;
+    letter-spacing: 0.4em;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-otp:focus {
+    border-color: var(--vert-clair);
+    box-shadow: 0 0 0 4px rgba(82, 183, 136, 0.15);
+}
+
+.otp-aide {
+    background-color: #FFF8EC;
+    border: 1px solid #FFDEA0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #7A4F00;
+}
+
+.otp-aide i { color: var(--or); }
+
+/* ── BLOC OTP ────────────────────────────────────────── */
+.otp-entete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.otp-icone {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #EAF4EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--vert-moyen);
+}
+
+/* ── BOUTON PRINCIPAL ────────────────────────────────── */
+.btn-connexion {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--vert-fonce);
+    color: var(--blanc);
+    border: none;
+    border-radius: var(--rayon);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 4px;
+}
+
+.btn-connexion:hover  { background-color: var(--vert-moyen); }
+.btn-connexion:active { transform: scale(0.99); }
+
+/* ── LIEN BAS ────────────────────────────────────────── */
+.auth-liens-bas {
+    text-align: center;
+}
+
+.auth-liens-bas a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--texte-doux);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.auth-liens-bas a:hover { color: var(--vert-fonce); }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 900px) {
+    .auth-visuel { display: none; }      /* On cache le panneau gauche sur mobile */
+    .auth-formulaire { padding: 32px 20px; }
+    .auth-carte { padding: 36px 24px; }
+}
+
+@media (max-width: 480px) {
+    .auth-carte { padding: 28px 18px; }
+    .auth-titre { font-size: 1.5rem; }
+}

@@ -1,0 +1,487 @@
+/* signalements.css — Mia Dzra Do */
+
+:root {
+  --vert: #006a4e;
+  --vert-clair: #e8f5f0;
+  --vert-fonce: #1b4332;
+  --orange: #ff9f1c;
+  --texte: #0d1f17;
+  --gris: #6b7280;
+  --fond: #f4f6f4;
+  --blanc: #ffffff;
+  --bordure: #e5e7eb;
+}
+
+.conteneur {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ════════════════════════════════
+   PAGE
+════════════════════════════════ */
+.page-signalements {
+  background: var(--fond);
+  min-height: 80vh;
+  padding: 40px 0 64px;
+}
+
+/* ════════════════════════════════
+   EN-TÊTE
+════════════════════════════════ */
+.page-entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-entete h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--texte);
+  margin-bottom: 3px;
+}
+
+.page-entete p {
+  font-size: 0.85rem;
+  color: var(--gris);
+}
+
+/* Bouton signaler */
+.btn-signaler {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  background: var(--orange);
+  color: var(--blanc);
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-signaler:hover {
+  background: #e08800;
+}
+
+.btn-signaler-outline {
+  background: transparent;
+  color: var(--vert);
+  border: 2px solid var(--vert);
+}
+.btn-signaler-outline:hover {
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+/* ════════════════════════════════
+   BARRE DE FILTRES
+════════════════════════════════ */
+.barre-filtres {
+  background: var(--blanc);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Filtres statut */
+.filtres-statut {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filtre-statut {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gris);
+  background: var(--fond);
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  transition: all 0.15s;
+}
+.filtre-statut:hover {
+  color: var(--vert);
+  background: var(--vert-clair);
+}
+.filtre-statut.actif {
+  background: var(--vert);
+  color: var(--blanc);
+  border-color: var(--vert);
+}
+
+/* Points colorés */
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dot-rouge {
+  background-color: #e74c3c;
+}
+.dot-orange {
+  background-color: #ff9f1c;
+}
+.dot-vert {
+  background-color: #2d6a4f;
+}
+
+/* Recherche + catégorie */
+.filtres-recherche {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.champ-recherche {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1.5px solid var(--bordure);
+  border-radius: 8px;
+  background: var(--fond);
+  transition: border-color 0.15s;
+}
+.champ-recherche:focus-within {
+  border-color: var(--vert);
+  background: var(--blanc);
+}
+.champ-recherche i {
+  color: #aaa;
+  font-size: 0.82rem;
+}
+.champ-recherche input {
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-family: "Lato", sans-serif;
+  color: var(--texte);
+  width: 180px;
+  outline: none;
+}
+
+.filtres-recherche select {
+  padding: 7px 12px;
+  border: 1.5px solid var(--bordure);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: "Lato", sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.filtres-recherche select:focus {
+  border-color: var(--vert);
+}
+
+.btn-filtrer {
+  padding: 7px 16px;
+  background: var(--vert);
+  color: var(--blanc);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  transition: background 0.15s;
+}
+.btn-filtrer:hover {
+  background: var(--vert-fonce);
+}
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #fde8e8;
+  color: #c0392b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.btn-reset:hover {
+  background: #fca5a5;
+}
+
+/* ════════════════════════════════
+   ÉTAT VIDE
+════════════════════════════════ */
+.etat-vide {
+  text-align: center;
+  padding: 72px 24px;
+  color: var(--gris);
+}
+.etat-vide i {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+.etat-vide h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 8px;
+}
+.etat-vide p {
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.etat-vide a {
+  color: var(--vert);
+}
+
+/* ════════════════════════════════
+   LISTE DES CARTES
+════════════════════════════════ */
+.liste-sig {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carte-sig {
+  background: var(--blanc);
+  border-radius: 14px;
+  border: 1.5px solid var(--bordure);
+  overflow: hidden;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.carte-sig:hover {
+  border-color: var(--vert);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+/* Lien principal */
+.carte-lien {
+  display: flex;
+  text-decoration: none;
+  color: var(--texte);
+}
+
+/* ── Photo/icône ── */
+.carte-media {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.carte-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carte-media-vide {
+  width: 100%;
+  height: 100%;
+  background: var(--vert-clair);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--vert);
+}
+
+/* ── Corps texte ── */
+.carte-corps {
+  flex: 1;
+  padding: 12px 16px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carte-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.carte-cat {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--vert);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.carte-titre {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carte-desc {
+  font-size: 0.8rem;
+  color: var(--gris);
+  line-height: 1.5;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carte-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.carte-meta span {
+  font-size: 0.73rem;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Badges statut ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.badge-nouveau {
+  background: #fde8e8;
+  color: #c0392b;
+}
+.badge-en-cours {
+  background: #fff4e0;
+  color: #d97706;
+}
+.badge-resolu {
+  background: var(--vert-clair);
+  color: var(--vert);
+}
+.badge-rejete {
+  background: #f5f5f5;
+  color: #888;
+}
+
+/* ── Bouton vote ── */
+.carte-vote {
+  padding: 8px 14px 10px;
+  border-top: 1px solid var(--bordure);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-vote {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--fond);
+  color: var(--gris);
+  border: 1.5px solid var(--bordure);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  transition: all 0.15s;
+}
+.btn-vote:hover {
+  background: var(--vert-clair);
+  border-color: var(--vert);
+  color: var(--vert);
+}
+.btn-vote.vote-actif {
+  background: var(--vert);
+  border-color: var(--vert);
+  color: var(--blanc);
+}
+.btn-vote.vote-actif:hover {
+  background: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+}
+
+.vote-label {
+  font-size: 0.78rem;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 640px) {
+  .barre-filtres {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filtres-recherche {
+    width: 100%;
+  }
+  .champ-recherche {
+    flex: 1;
+  }
+  .champ-recherche input {
+    width: 100%;
+  }
+
+  .carte-lien {
+    flex-direction: column;
+  }
+  .carte-media {
+    width: 100%;
+    height: 150px;
+  }
+
+  .page-entete {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-signaler {
+    width: 100%;
+    justify-content: center;
+  }
+}

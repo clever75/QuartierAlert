@@ -1,0 +1,331 @@
+/* inscription.css — MonQuartier TG — CSS simple */
+
+/* ── PAGE CENTRÉE ─────────────────────────────── */
+.page-auth {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background-color: #F8F9FA;
+}
+
+/* ── CARTE ────────────────────────────────────── */
+.carte-auth {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── LOGO ─────────────────────────────────────── */
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #0d1f17;
+    margin-bottom: 24px;
+}
+
+.auth-logo i {
+    color: #006A4E;
+    font-size: 1.4rem;
+}
+
+.auth-logo strong {
+    color: #006A4E;
+}
+
+/* ── TITRES ───────────────────────────────────── */
+.auth-titre {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0d1f17;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.auth-sous-titre {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.auth-sous-titre a {
+    color: #006A4E;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-sous-titre a:hover {
+    text-decoration: underline;
+}
+
+/* ── INDICATEUR ÉTAPES ────────────────────────── */
+.etapes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 28px;
+}
+
+.etape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.etape-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #dddddd;
+    color: #888888;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.etape-active .etape-num {
+    background-color: #006A4E;
+    color: #ffffff;
+}
+
+.etape-faite .etape-num {
+    background-color: #006A4E;
+    color: #ffffff;
+}
+
+.etape span {
+    font-size: 0.72rem;
+    color: #aaaaaa;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.etape-active span {
+    color: #006A4E;
+}
+
+.etape-ligne {
+    flex: 1;
+    height: 2px;
+    background-color: #dddddd;
+    min-width: 60px;
+    margin: 0 8px;
+    margin-bottom: 20px;
+}
+
+.ligne-faite {
+    background-color: #006A4E;
+}
+
+/* ── ERREUR ───────────────────────────────────── */
+.alerte-erreur {
+    background-color: #fde8e8;
+    color: #c0392b;
+    border: 1px solid #f5c2c7;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── CHAMPS ───────────────────────────────────── */
+.champ {
+    margin-bottom: 16px;
+}
+
+.champ label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 6px;
+}
+
+.champ label i {
+    color: #006A4E;
+    margin-right: 4px;
+}
+
+.optionnel {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.champ-aide {
+    display: block;
+    font-size: 0.72rem;
+    color: #6b7280;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.champ input,
+.champ select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #dddddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    background-color: #fafafa;
+    color: #0d1f17;
+}
+
+.champ input:focus,
+.champ select:focus {
+    outline: none;
+    border-color: #006A4E;
+    background-color: #ffffff;
+}
+
+/* Téléphone avec indicatif */
+.tel-groupe {
+    display: flex;
+    gap: 8px;
+}
+
+.tel-indicatif {
+    padding: 12px 14px;
+    border: 1.5px solid #dddddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #f4f1ea;
+    color: #0d1f17;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tel-groupe input {
+    flex: 1;
+}
+
+/* ── CGU ──────────────────────────────────────── */
+.cgu {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: #555555;
+    margin-bottom: 20px;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.cgu input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: #006A4E;
+    cursor: pointer;
+}
+
+.cgu a {
+    color: #006A4E;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ── BOUTONS ──────────────────────────────────── */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #006A4E;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.btn-submit:hover {
+    background-color: #1B4332;
+}
+
+.btns-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.btns-nav .btn-submit {
+    flex: 1;
+    margin-top: 0;
+}
+
+.btn-retour {
+    flex: 1;
+    padding: 14px;
+    background-color: #ffffff;
+    color: #0d1f17;
+    border: 1.5px solid #dddddd;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-retour:hover {
+    border-color: #006A4E;
+    color: #006A4E;
+}
+
+/* ── LIENS BAS ────────────────────────────────── */
+.auth-liens {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-liens a {
+    font-size: 0.82rem;
+    color: #6b7280;
+    text-decoration: none;
+}
+
+.auth-liens a:hover {
+    color: #006A4E;
+}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 480px) {
+    .carte-auth {
+        padding: 28px 20px;
+    }
+    .etape-ligne {
+        min-width: 30px;
+    }
+}

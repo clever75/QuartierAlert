@@ -1,0 +1,376 @@
+/* ============================================================
+   creer_agent.css — Mia Dzra Do
+   Formulaire de création d'un agent municipal
+   ============================================================ */
+
+/* ── Lien retour ───────────────────────────────────────────── */
+.ca-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gris-400);
+  transition: color 0.15s;
+  margin-bottom: 6px;
+}
+.ca-back:hover {
+  color: var(--vert-clair);
+}
+
+/* ── Carte principale ──────────────────────────────────────── */
+.ca-card {
+  background: #fff;
+  border: 1px solid var(--gris-200);
+  border-radius: var(--radius);
+  max-width: 620px;
+  overflow: hidden;
+}
+
+.ca-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--gris-200);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ca-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--vert-pale);
+  color: var(--vert-clair);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid #a8d5bb;
+}
+
+.ca-card-title {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gris-900);
+}
+
+.ca-card-sub {
+  font-size: 0.78rem;
+  color: var(--gris-400);
+  margin-top: 3px;
+}
+
+.ca-card-body {
+  padding: 24px;
+}
+
+/* ── Alertes ───────────────────────────────────────────────── */
+.ca-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+.ca-alert i {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.ca-alert-err {
+  background: var(--rouge-pale);
+  color: var(--rouge);
+  border: 1px solid #f5c6c0;
+}
+.ca-alert-ok {
+  background: var(--vert-pale);
+  color: var(--vert-clair);
+  border: 1px solid #a8d5bb;
+}
+
+/* ── Formulaire ────────────────────────────────────────────── */
+.ca-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Fieldsets ─────────────────────────────────────────────── */
+.ca-fieldset {
+  border: 1px solid var(--gris-200);
+  border-radius: 8px;
+  padding: 16px 18px 18px;
+}
+
+.ca-legend {
+  font-family: "Syne", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gris-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0 6px;
+}
+
+/* ── Grille champs ─────────────────────────────────────────── */
+.ca-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.ca-champ {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+.ca-full {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+.ca-fieldset .ca-champ:first-child {
+  margin-top: 0;
+}
+
+.ca-champ label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gris-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ca-champ label i {
+  color: var(--vert-clair);
+  font-size: 0.65rem;
+}
+.ca-opt {
+  font-weight: 400;
+  color: var(--gris-400);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.ca-champ input,
+.ca-champ select {
+  padding: 9px 12px;
+  border: 1px solid var(--gris-200);
+  border-radius: 7px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  color: var(--gris-900);
+  background: #fafbfc;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+  width: 100%;
+}
+
+.ca-champ input:focus,
+.ca-champ select:focus {
+  outline: none;
+  border-color: var(--vert-clair);
+  background: #fff;
+}
+
+.ca-hint {
+  font-size: 0.7rem;
+  color: var(--gris-400);
+}
+
+/* ── Préfixe téléphone ─────────────────────────────────────── */
+.ca-input-prefix {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--gris-200);
+  border-radius: 7px;
+  overflow: hidden;
+  background: #fafbfc;
+  transition: border-color 0.15s;
+}
+
+.ca-input-prefix:focus-within {
+  border-color: var(--vert-clair);
+  background: #fff;
+}
+
+.ca-prefix {
+  padding: 9px 10px;
+  background: var(--gris-100);
+  color: var(--gris-600);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-right: 1px solid var(--gris-200);
+  white-space: nowrap;
+}
+
+.ca-input-prefix input {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  flex: 1;
+}
+
+.ca-input-prefix input:focus {
+  outline: none !important;
+}
+
+/* ── Grille services visuels ───────────────────────────────── */
+.ca-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ca-service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border: 1.5px solid var(--gris-200);
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fafbfc;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gris-600);
+  text-align: center;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.ca-service-card i {
+  font-size: 1.2rem;
+  color: var(--gris-400);
+  transition: color 0.15s;
+}
+
+.ca-service-card:hover {
+  border-color: var(--vert-clair);
+  background: var(--vert-pale);
+  color: var(--vert-clair);
+}
+
+.ca-service-card:hover i {
+  color: var(--vert-clair);
+}
+
+.ca-service-card.selected {
+  border-color: var(--vert-clair);
+  background: var(--vert-pale);
+  color: var(--vert-clair);
+  box-shadow: 0 0 0 3px rgba(26, 92, 62, 0.12);
+}
+
+.ca-service-card.selected i {
+  color: var(--vert-clair);
+}
+
+/* ── Mot de passe avec œil ─────────────────────────────────── */
+.ca-pwd-wrap {
+  position: relative;
+}
+
+.ca-pwd-wrap input {
+  padding-right: 38px;
+}
+
+.ca-eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gris-400);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.ca-eye:hover {
+  color: var(--vert-clair);
+}
+
+/* ── Info box ──────────────────────────────────────────────── */
+.ca-info {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--ambre-pale);
+  border: 1px solid #f5d99a;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #7a5200;
+}
+.ca-info i {
+  color: var(--ambre);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Bouton soumettre ──────────────────────────────────────── */
+.ca-submit {
+  width: 100%;
+  padding: 12px;
+  background: var(--vert);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s;
+}
+
+.ca-submit:hover {
+  background: var(--vert-clair);
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ca-card {
+    max-width: 100%;
+  }
+  .ca-card-body {
+    padding: 16px;
+  }
+  .ca-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .ca-row {
+    grid-template-columns: 1fr;
+  }
+  .ca-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ca-fieldset {
+    padding: 12px 14px 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ca-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
